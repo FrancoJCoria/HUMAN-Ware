@@ -67,4 +67,12 @@ public class Empresa {
         }
     }
 
+    public void cancelarOferta(OfertaTrabajo oferta) {
+        if (this.ofertas.contains(oferta)){
+            oferta.cancelarOferta();
+            System.out.println("Oferta de trabajo Cancela: "+ oferta.getIdOfTrabajo());
+        }else{
+            System.out.println("Error: La oferta de trabajo no esta registrada.");
+        }
+  }
 }
