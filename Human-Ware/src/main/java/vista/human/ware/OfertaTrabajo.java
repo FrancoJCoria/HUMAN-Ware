@@ -4,6 +4,7 @@
  */
 package vista.human.ware;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,8 +24,10 @@ public class OfertaTrabajo {
     Titulo tituloRequerido;
     String estado;
     List<OfertaHabilidad> habilidadesRequeridas;
+    LocalDate fechaCobertura;
+    List<Solicitud> solicitudesRecibidas;
 
-    public OfertaTrabajo(int idOfTrabajo, String tituloDesc, String descripcion, double salarioMin, double salarioMax, String tipoJornada, String oficina, Titulo tituloRequerido, List<OfertaHabilidad> habilidadesRequeridas, String estado) {
+    public OfertaTrabajo(int idOfTrabajo, String tituloDesc, String descripcion, double salarioMin, double salarioMax, String tipoJornada, String oficina) {
         this.idOfTrabajo = idOfTrabajo;
         this.tituloDesc = tituloDesc;
         this.descripcion = descripcion;
@@ -32,26 +35,38 @@ public class OfertaTrabajo {
         this.salarioMax = salarioMax;
         this.tipoJornada = tipoJornada;
         this.oficina = oficina;
-        this.tituloRequerido = tituloRequerido;
-        this.estado = estado;
+        this.estado = "Pendiente";
         this.habilidadesRequeridas = new ArrayList<>();
+        this.solicitudesRecibidas = new ArrayList<>();
     }
 
     public void agregarTituloRequerido(Titulo tituloR) {
-      this.tituloRequerido = tituloR;
+        this.tituloRequerido = tituloR;
         System.out.println("El titulo fue añadido con exito!");
     }
 
     public void agregarHabilidadRequerida(Habilidad habilidad, int nivelMinimo) {
         if (nivelMinimo >= 1 && nivelMinimo <= 5) {
-            OfertaHabilidad of = new OfertaHabilidad(habilidad,nivelMinimo);
+            OfertaHabilidad of = new OfertaHabilidad(habilidad, nivelMinimo);
             this.habilidadesRequeridas.add(of);
-        }else{
+        } else {
             System.out.println("Error, El nivel minimo debe ser entre 1 y 5");
         }
 
     }
 
+    public void cancelarOferta() {
+        this.estado = "Cancelada";
+    }
+
+    public void modificarEstadoSolicitudes(){
+        this.estado = "Cubierta";
+        this.fechaCobertura = LocalDate.now();
+        for(Solicitud solicitud : solicitudesRecibidas) {
+            solicitud.estado = "Inactiva";
+        }
+    }
+    
     public int getIdOfTrabajo() {
         return idOfTrabajo;
     }
@@ -60,49 +75,40 @@ public class OfertaTrabajo {
         return tituloDesc;
     }
 
-   
     public String getDescripcion() {
         return descripcion;
     }
-
 
     public double getSalarioMin() {
         return salarioMin;
     }
 
- 
     public double getSalarioMax() {
         return salarioMax;
     }
-
- 
 
     public String getTipoJornada() {
         return tipoJornada;
     }
 
- 
-
     public String getOficina() {
         return oficina;
     }
-
-  
 
     public Titulo getTituloRequerido() {
         return tituloRequerido;
     }
 
-    public String isEstado() {
+    public String getEstado() {
         return estado;
     }
-
 
     public List<OfertaHabilidad> getHabilidadesRequeridas() {
         return habilidadesRequeridas;
     }
 
-    
-    
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 
 }

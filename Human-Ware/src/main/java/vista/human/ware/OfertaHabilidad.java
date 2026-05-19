@@ -25,6 +25,10 @@ class OfertaHabilidad {
     public int getNivelMinimo(){
         return this.nivelMinimo;
     }
-    
+
+    public int getIdOfertaHabilidad() {
+        return idOfertaHabilidad;
+    }
+   
     
 }
