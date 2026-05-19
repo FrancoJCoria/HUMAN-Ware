@@ -37,11 +37,71 @@ public class OfertaTrabajo {
         this.habilidadesRequeridas = new ArrayList<>();
     }
 
-    public void agregarRequisitoMinimo(Habilidad habilidad, int puntuacionMinimo) {
-    }
-
     public void agregarTituloRequerido(Titulo tituloR) {
 
     }
+
+    public void agregarHabilidadRequerida(Habilidad habilidad, int nivelMinimo) {
+        if (nivelMinimo >= 1 && nivelMinimo <= 5) {
+            OfertaHabilidad of = new OfertaHabilidad(habilidad,nivelMinimo);
+            this.habilidadesRequeridas.add(of);
+        }else{
+            System.out.println("Error, El nivel minimo debe ser entre 1 y 5");
+        }
+
+    }
+
+    public int getIdOfTrabajo() {
+        return idOfTrabajo;
+    }
+
+    public String getTituloDesc() {
+        return tituloDesc;
+    }
+
+   
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+
+    public double getSalarioMin() {
+        return salarioMin;
+    }
+
+ 
+    public double getSalarioMax() {
+        return salarioMax;
+    }
+
+ 
+
+    public String getTipoJornada() {
+        return tipoJornada;
+    }
+
+ 
+
+    public String getOficina() {
+        return oficina;
+    }
+
+  
+
+    public Titulo getTituloRequerido() {
+        return tituloRequerido;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+
+    public List<OfertaHabilidad> getHabilidadesRequeridas() {
+        return habilidadesRequeridas;
+    }
+
+    
+    
 
 }

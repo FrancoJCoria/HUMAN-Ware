@@ -9,5 +9,6 @@ package vista.human.ware;
  * @author FRANCO
  */
 class OfertaHabilidad {
+    int idOfHa;
     
 }
