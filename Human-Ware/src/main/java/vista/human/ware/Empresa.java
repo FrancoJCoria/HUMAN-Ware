@@ -4,6 +4,7 @@ package vista.human.ware;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Empresa {
     //atributos
     private int idEmpresa;
@@ -65,5 +66,13 @@ public class Empresa {
             System.out.println("La oferta se publico correctamente"+ this.nombre);
         }
     }
-    
+    public void  puestoCubierto (OfertaTrabajo oferta){
+        for (int i = 0; i < ofertas.size(); i++){
+            OfertaTrabajo o = ofertas.get(i);
+            
+         //   if (o.getIdOfTrabajo() == oferta.getIdOfTrabajo()){
+                
+            }
+        }
+   // }
 }
