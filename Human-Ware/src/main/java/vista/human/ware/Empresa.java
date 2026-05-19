@@ -47,5 +47,5 @@ public class Empresa {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
+    //Metodos
 }
