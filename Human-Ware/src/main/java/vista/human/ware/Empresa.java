@@ -4,6 +4,7 @@ package vista.human.ware;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Empresa {
     //atributos
     private int idEmpresa;
@@ -65,5 +66,13 @@ public class Empresa {
             System.out.println("La oferta se publico correctamente"+ this.nombre);
         }
     }
-    
+
+    public void cancelarOferta(OfertaTrabajo oferta) {
+        if (this.ofertas.contains(oferta)){
+            oferta.cancelarOferta();
+            System.out.println("Oferta de trabajo Cancela: "+ oferta.getIdOfTrabajo());
+        }else{
+            System.out.println("Error: La oferta de trabajo no esta registrada.");
+        }
+  }
 }
