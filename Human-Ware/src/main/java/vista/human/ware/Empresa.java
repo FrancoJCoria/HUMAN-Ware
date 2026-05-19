@@ -75,4 +75,13 @@ public class Empresa {
             System.out.println("Error: La oferta de trabajo no esta registrada.");
         }
   }
+    
+    public void puestoCubierto(OfertaTrabajo oferta){
+        if (this.ofertas.contains(oferta)){
+            oferta.modificarEstadoSolicitudes();
+            System.out.println("Se comunica  que la oferta : "+ oferta.getIdOfTrabajo()+ "fue cubierto");
+        }else{
+            System.out.println("Error: La oferta de trabajo no esta registrada");
+        }
+    }
 }
