@@ -9,6 +9,22 @@ package vista.human.ware;
  * @author FRANCO
  */
 class OfertaHabilidad {
-    int idOfHa;
+    private int idOfertaHabilidad;
+    private Habilidad habilidad;
+    private int nivelMinimo;
+    
+    public OfertaHabilidad(Habilidad habilidad, int nivelMinimo){
+        this.habilidad = habilidad;
+        this.nivelMinimo = nivelMinimo;
+    }
+    
+    public Habilidad getHabilidad(){
+        return this.habilidad;
+    }
+    
+    public int getNivelMinimo(){
+        return this.nivelMinimo;
+    }
+    
     
 }

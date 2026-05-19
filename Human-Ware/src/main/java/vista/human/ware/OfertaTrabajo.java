@@ -21,10 +21,10 @@ public class OfertaTrabajo {
     String tipoJornada;
     String oficina;
     Titulo tituloRequerido;
-    boolean estado;
+    String estado;
     List<OfertaHabilidad> habilidadesRequeridas;
 
-    public OfertaTrabajo(int idOfTrabajo, String tituloDesc, String descripcion, double salarioMin, double salarioMax, String tipoJornada, String oficina, Titulo tituloRequerido, List<OfertaHabilidad> habilidadesRequeridas, boolean estado) {
+    public OfertaTrabajo(int idOfTrabajo, String tituloDesc, String descripcion, double salarioMin, double salarioMax, String tipoJornada, String oficina, Titulo tituloRequerido, List<OfertaHabilidad> habilidadesRequeridas, String estado) {
         this.idOfTrabajo = idOfTrabajo;
         this.tituloDesc = tituloDesc;
         this.descripcion = descripcion;
@@ -38,7 +38,8 @@ public class OfertaTrabajo {
     }
 
     public void agregarTituloRequerido(Titulo tituloR) {
-
+      this.tituloRequerido = tituloR;
+        System.out.println("El titulo fue añadido con exito!");
     }
 
     public void agregarHabilidadRequerida(Habilidad habilidad, int nivelMinimo) {
@@ -92,7 +93,7 @@ public class OfertaTrabajo {
         return tituloRequerido;
     }
 
-    public boolean isEstado() {
+    public String isEstado() {
         return estado;
     }
 
