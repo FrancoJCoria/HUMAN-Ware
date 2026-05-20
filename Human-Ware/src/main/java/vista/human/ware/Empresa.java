@@ -76,9 +76,9 @@ public class Empresa {
         }
   }
     
-    public void puestoCubierto(OfertaTrabajo oferta){
+    public void puestoCubierto(OfertaTrabajo oferta,Solicitud solicitudElegida){
         if (this.ofertas.contains(oferta)){
-            oferta.modificarEstadoSolicitudes();
+            oferta.comunicarPuestoCubierto(solicitudElegida);
             System.out.println("Se comunica  que la oferta : "+ oferta.getIdOfTrabajo()+ "fue cubierto");
         }else{
             System.out.println("Error: La oferta de trabajo no esta registrada");

@@ -57,13 +57,38 @@ public class OfertaTrabajo {
 
     public void cancelarOferta() {
         this.estado = "Cancelada";
+        for(Solicitud solicitud : solicitudesRecibidas) {
+            solicitud.setEstado("Inactiva");
+        }
     }
 
-    public void modificarEstadoSolicitudes(){
+    public void comunicarPuestoCubierto(Solicitud solicitudElegida){
         this.estado = "Cubierta";
         this.fechaCobertura = LocalDate.now();
         for(Solicitud solicitud : solicitudesRecibidas) {
-            solicitud.estado = "Inactiva";
+            solicitud.setEstado("Inactiva");
+            
+            if(solicitud.equals(solicitudElegida)){
+                solicitud.setFechaContrato(fechaCobertura);
+            }
+        }
+        
+        
+    }
+    
+    public void recibirSolicitud(Solicitud nuevaSolicitud){
+        if(!solicitudesRecibidas.contains(nuevaSolicitud)){
+            solicitudesRecibidas.add(nuevaSolicitud);
+            System.out.println("La solicitud fue recibida con exito!");
+        }else{
+            System.out.println("La solicitud ya existe !");
+        }
+    }
+    
+    
+    public void verHistorialSolicitudes(){
+        for(Solicitud solicitud : solicitudesRecibidas){
+            System.out.println(solicitud);
         }
     }
     

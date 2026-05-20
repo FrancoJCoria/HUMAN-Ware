@@ -29,6 +29,5 @@ class OfertaHabilidad {
     public int getIdOfertaHabilidad() {
         return idOfertaHabilidad;
     }
-   
     
 }
