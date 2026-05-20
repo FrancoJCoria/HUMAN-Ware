@@ -1,32 +1,33 @@
-
 package vista.human.ware;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Empresa {
+
     //atributos
     private int idEmpresa;
     private String nombre;
     private String correo;
     private String telefono;
     private TarjetaCobro tarjeta;
-    private  List<OfertaTrabajo> ofertas; 
-    
+    private List<OfertaTrabajo> ofertasLaborales;
+
     //constructor vacio
-    public Empresa(){
+    public Empresa() {
     }
-    
+
     //constructor
-    public Empresa (int idEmpresa, String nombre, String correo, String telefono){
+    public Empresa(int idEmpresa, String nombre, String correo, String telefono) {
         this.idEmpresa = idEmpresa;
         this.nombre = nombre;
         this.correo = correo;
-        this.telefono = telefono; 
-        this.ofertas = new ArrayList<OfertaTrabajo>();
+        this.telefono = telefono;
+        this.ofertasLaborales = new ArrayList<OfertaTrabajo>();
+        this.tarjeta = new TarjetaCobro();
     }
 //get y set
+
     public int getIdEmpresa() {
         return idEmpresa;
     }
@@ -58,30 +59,36 @@ public class Empresa {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
+
+    public void setTarjeta(TarjetaCobro tarjeta) {
+        this.tarjeta = tarjeta;
+    }
+
     //Metodos
-    public void publicarOferta(OfertaTrabajo oferta){
-        if (oferta != null){
-            this.ofertas.add(oferta);
-            System.out.println("La oferta se publico correctamente"+ this.nombre);
+    public void publicarOferta(OfertaTrabajo oferta) {
+        if (oferta != null) {
+            this.ofertasLaborales.add(oferta);
+            oferta.setEstado("Publicada");
+            System.out.println("La oferta se publico correctamente" + this.nombre);
         }
     }
 
     public void cancelarOferta(OfertaTrabajo oferta) {
-        if (this.ofertas.contains(oferta)){
+        if (this.ofertasLaborales.contains(oferta)) {
             oferta.cancelarOferta();
-            System.out.println("Oferta de trabajo Cancela: "+ oferta.getIdOfTrabajo());
-        }else{
+            System.out.println("Oferta de trabajo Cancelada: " + oferta.getIdOfTrabajo());
+        } else {
             System.out.println("Error: La oferta de trabajo no esta registrada.");
         }
-  }
-    
-    public void puestoCubierto(OfertaTrabajo oferta,Solicitud solicitudElegida){
-        if (this.ofertas.contains(oferta)){
+    }
+
+    public void puestoCubierto(OfertaTrabajo oferta, Solicitud solicitudElegida) {
+        if (this.ofertasLaborales.contains(oferta) && oferta.getEstado().equals("Publicada")) {
             oferta.comunicarPuestoCubierto(solicitudElegida);
-            System.out.println("Se comunica  que la oferta : "+ oferta.getIdOfTrabajo()+ "fue cubierto");
-        }else{
+            System.out.println("Se comunica  que la oferta : " + oferta.getIdOfTrabajo() + "fue cubierta");
+        } else {
             System.out.println("Error: La oferta de trabajo no esta registrada");
         }
     }
+
 }

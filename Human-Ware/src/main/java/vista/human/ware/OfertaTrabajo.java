@@ -14,17 +14,17 @@ import java.util.List;
  */
 public class OfertaTrabajo {
 
-    int idOfTrabajo;
-    String tituloDesc;
-    String descripcion;
-    double salarioMin;
-    double salarioMax;
-    String tipoJornada;
-    String oficina;
-    Titulo tituloRequerido;
-    String estado;
+    private int idOfTrabajo;
+    private String tituloDesc;
+    private String descripcion;
+    private double salarioMin;
+    private double salarioMax;
+    private String tipoJornada;
+    private String oficina;
+    private Titulo tituloRequerido;
+    private String estado;
     List<OfertaHabilidad> habilidadesRequeridas;
-    LocalDate fechaCobertura;
+    private LocalDate fechaCobertura;
     List<Solicitud> solicitudesRecibidas;
 
     public OfertaTrabajo(int idOfTrabajo, String tituloDesc, String descripcion, double salarioMin, double salarioMax, String tipoJornada, String oficina) {
@@ -57,41 +57,39 @@ public class OfertaTrabajo {
 
     public void cancelarOferta() {
         this.estado = "Cancelada";
-        for(Solicitud solicitud : solicitudesRecibidas) {
+        for (Solicitud solicitud : solicitudesRecibidas) {
             solicitud.setEstado("Inactiva");
         }
     }
 
-    public void comunicarPuestoCubierto(Solicitud solicitudElegida){
+    public void comunicarPuestoCubierto(Solicitud solicitudElegida) {
         this.estado = "Cubierta";
         this.fechaCobertura = LocalDate.now();
-        for(Solicitud solicitud : solicitudesRecibidas) {
+        for (Solicitud solicitud : solicitudesRecibidas) {
             solicitud.setEstado("Inactiva");
-            
-            if(solicitud.equals(solicitudElegida)){
+
+            if (solicitud.equals(solicitudElegida)) {
                 solicitud.setFechaContrato(fechaCobertura);
             }
         }
-        
-        
+
     }
-    
-    public void recibirSolicitud(Solicitud nuevaSolicitud){
-        if(!solicitudesRecibidas.contains(nuevaSolicitud)){
+
+    public void recibirSolicitud(Solicitud nuevaSolicitud) {
+        if (!solicitudesRecibidas.contains(nuevaSolicitud)) {
             solicitudesRecibidas.add(nuevaSolicitud);
             System.out.println("La solicitud fue recibida con exito!");
-        }else{
+        } else {
             System.out.println("La solicitud ya existe !");
         }
     }
-    
-    
-    public void verHistorialSolicitudes(){
-        for(Solicitud solicitud : solicitudesRecibidas){
+
+    public void verHistorialSolicitudes() {
+        for (Solicitud solicitud : solicitudesRecibidas) {
             System.out.println(solicitud);
         }
     }
-    
+
     public int getIdOfTrabajo() {
         return idOfTrabajo;
     }
@@ -134,6 +132,34 @@ public class OfertaTrabajo {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public void setTituloDesc(String tituloDesc) {
+        this.tituloDesc = tituloDesc;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setSalarioMin(double salarioMin) {
+        this.salarioMin = salarioMin;
+    }
+
+    public void setSalarioMax(double salarioMax) {
+        this.salarioMax = salarioMax;
+    }
+
+    public void setTipoJornada(String tipoJornada) {
+        this.tipoJornada = tipoJornada;
+    }
+
+    public void setOficina(String oficina) {
+        this.oficina = oficina;
+    }
+
+    public void setTituloRequerido(Titulo tituloRequerido) {
+        this.tituloRequerido = tituloRequerido;
     }
 
 }

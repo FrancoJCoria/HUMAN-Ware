@@ -11,6 +11,7 @@ import java.time.LocalDate;
  * @author FRANCO
  */
 class Solicitud {
+
     private int idSolicitud;
     private LocalDate fechaCreacion;
     private LocalDate fechaContrato;
@@ -51,9 +52,5 @@ class Solicitud {
     public String toString() {
         return "Solicitud{" + "idSolicitud=" + idSolicitud + ", fechaCreacion=" + fechaCreacion + ", fechaContrato=" + fechaContrato + ", estado=" + estado + '}';
     }
-    
-    
-   
-    
-    
+
 }
