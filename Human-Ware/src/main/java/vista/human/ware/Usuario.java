@@ -20,6 +20,7 @@ public class Usuario {
     public String cuil;
     public String sexo;
     public LocalDate fechaNac;
+    perfilLaboral miPerfilLaboral;
 
     public Usuario() {
     }
@@ -34,6 +35,17 @@ public class Usuario {
         this.cuil = cuil;
         this.sexo = sexo;
         this.fechaNac = fechaNac;
+        this.miPerfilLaboral = null;
+    }
+    
+    
+    public void crearPerfilLaboral(perfilLaboral miPerfilLaboral){
+        if(this.miPerfilLaboral == null){
+            this.miPerfilLaboral = miPerfilLaboral;
+            System.out.println("Se añadio el perfilLaboral al Usuario!");
+        }else{
+            System.out.println("Ya existe un perfilLaboral con este Usuario");
+        }
     }
 
     public long getIdUsuario() {

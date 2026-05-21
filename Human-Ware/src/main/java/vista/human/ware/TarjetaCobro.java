@@ -30,7 +30,9 @@ public class TarjetaCobro {
     //Constructor Vacio
     public TarjetaCobro() {
     }
-
+    
+    
+    
     
     public String getTitular() {
         return titular;
