@@ -1,15 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package vista.human.ware;
 
 import java.time.LocalDate;
 
-/**
- *
- * @author Noxie-PC
- */
 public class TarjetaCobro {
     //Atributos
     private int nroDeTarjeta;
@@ -66,5 +59,4 @@ public class TarjetaCobro {
         this.codSeg = codSeg;
     }
 
-    
 }
