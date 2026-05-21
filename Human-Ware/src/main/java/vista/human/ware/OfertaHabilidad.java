@@ -9,26 +9,44 @@ package vista.human.ware;
  * @author FRANCO
  */
 class OfertaHabilidad {
-
+    //Atributos
     private int idOfertaHabilidad;
     private Habilidad habilidad;
     private int nivelMinimo;
 
+    //Constructor
     public OfertaHabilidad(Habilidad habilidad, int nivelMinimo) {
         this.habilidad = habilidad;
         this.nivelMinimo = nivelMinimo;
     }
 
+    public OfertaHabilidad() {
+    }
+    
+    
+   //Get  y Set
+    public int getIdOfertaHabilidad() {
+        return idOfertaHabilidad;
+    }
+
+    public void setIdOfertaHabilidad(int idOfertaHabilidad) {
+        this.idOfertaHabilidad = idOfertaHabilidad;
+    }
+
     public Habilidad getHabilidad() {
-        return this.habilidad;
+        return habilidad;
+    }
+
+    public void setHabilidad(Habilidad habilidad) {
+        this.habilidad = habilidad;
     }
 
     public int getNivelMinimo() {
-        return this.nivelMinimo;
+        return nivelMinimo;
     }
 
-    public int getIdOfertaHabilidad() {
-        return idOfertaHabilidad;
+    public void setNivelMinimo(int nivelMinimo) {
+        this.nivelMinimo = nivelMinimo;
     }
 
 }
