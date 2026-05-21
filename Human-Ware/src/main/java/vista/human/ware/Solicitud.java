@@ -1,15 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package vista.human.ware;
 
 import java.time.LocalDate;
 
-/**
- *
- * @author FRANCO
- */
 class Solicitud {
 
     private int idSolicitud;
@@ -52,5 +45,4 @@ class Solicitud {
     public String toString() {
         return "Solicitud{" + "idSolicitud=" + idSolicitud + ", fechaCreacion=" + fechaCreacion + ", fechaContrato=" + fechaContrato + ", estado=" + estado + '}';
     }
-
 }
