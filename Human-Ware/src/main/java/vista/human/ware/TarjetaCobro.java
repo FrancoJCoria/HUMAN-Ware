@@ -11,12 +11,27 @@ import java.time.LocalDate;
  * @author Noxie-PC
  */
 public class TarjetaCobro {
+    //Atributos
     private int nroDeTarjeta;
     private String titular;
     private LocalDate fechaExpira;
     private String banco;
     private int codSeg;
 
+    //Constructor
+    public TarjetaCobro(int nroDeTarjeta, String titular, LocalDate fechaExpira, String banco, int codSeg) {
+        this.nroDeTarjeta = nroDeTarjeta;
+        this.titular = titular;
+        this.fechaExpira = fechaExpira;
+        this.banco = banco;
+        this.codSeg = codSeg;
+    }
+   
+    //Constructor Vacio
+    public TarjetaCobro() {
+    }
+
+    
     public String getTitular() {
         return titular;
     }

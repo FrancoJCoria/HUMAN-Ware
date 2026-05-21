@@ -14,7 +14,8 @@ class Titulo {
     private String tipo;
     private String universidad;
 
-    public Titulo(String nombreTitulo, String tipo, String universidad) {
+    public Titulo(int idTitulo, String nombreTitulo, String tipo, String universidad) {
+        this.idTitulo = idTitulo;
         this.nombreTitulo = nombreTitulo;
         this.tipo = tipo;
         this.universidad = universidad;

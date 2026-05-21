@@ -64,6 +64,14 @@ public class Empresa {
         this.tarjeta = tarjeta;
     }
 
+    public List<OfertaTrabajo> getOfertasLaborales() {
+        return ofertasLaborales;
+    }
+
+    public void setOfertasLaborales(List<OfertaTrabajo> ofertasLaborales) {
+        this.ofertasLaborales = ofertasLaborales;
+    }
+
     //Metodos
     public void publicarOferta(OfertaTrabajo oferta) {
         if (oferta != null) {
