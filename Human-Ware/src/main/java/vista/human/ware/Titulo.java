@@ -51,7 +51,4 @@ class Titulo {
     public void setUniversidad(String universidad) {
         this.universidad = universidad;
     }
-    
-    
-    
 }
