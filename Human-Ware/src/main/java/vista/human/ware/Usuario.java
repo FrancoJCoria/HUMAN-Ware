@@ -111,9 +111,11 @@ public class Usuario {
     public boolean validarCredenciales(String usuario, String contraseñaEntrada) {
         return this.nombreUsuario.equals(usuario) && this.contraseña.equals(contraseñaEntrada);
     }
+
     @Override
     public String toString() {
-        return "Usuario{" + "idUsuario=" + idUsuario + ", constrase\u00f1a=" + contraseña + ", nombreUsuario=" + nombreUsuario + ", nombre=" + nombre + ", email=" + email + ", telefono=" + telefono + ", cuil=" + cuil + ", sexo=" + sexo + ", fechaNac=" + fechaNac + '}';
+        return "Usuario{" + "idUsuario=" + idUsuario + ", nombreUsuario=" + nombreUsuario + ", nombre=" + nombre + ", cuil=" + cuil + '}';
     }
+  
   
 }
