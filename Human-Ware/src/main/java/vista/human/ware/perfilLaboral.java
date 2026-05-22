@@ -33,6 +33,11 @@ class perfilLaboral {
         this.misSolicitudes = new ArrayList<>();
     }
 
+    public void agregarTitulo(Titulo titulo) {
+        this.titulo = titulo;
+        System.out.println("El titulo fue añadido con exito!");
+    }
+
     public void agregarHabilidad(Habilidad habilidad, int nivel) {
         if (nivel >= 1 && nivel <= 5 && !this.misHabilidades.contains(new PerfilHabilidad(habilidad, nivel))) {
             this.misHabilidades.add(new PerfilHabilidad(habilidad, nivel));
@@ -44,6 +49,23 @@ class perfilLaboral {
     public void mostrarSolicitudes() {
         for (Solicitud solicitud : misSolicitudes) {
             System.out.println(solicitud);
+        }
+    }
+
+    public void agregarSolicitud(Solicitud nuevaSolicitud) {
+        if (!this.misSolicitudes.contains(nuevaSolicitud)) {
+            this.misSolicitudes.add(nuevaSolicitud);
+            System.out.println("La solicitud fue enviada!");
+        } else {
+            System.out.println("Esta solicitud ya existe!");
+        }
+    }
+
+    public void cancelarSolicitud(Solicitud solicitud) {
+        if (this.misSolicitudes.contains(solicitud)) {
+            this.misSolicitudes.remove(solicitud);
+        } else {
+            System.out.println("La solicitud que desea eliminar no existe!");
         }
     }
 
