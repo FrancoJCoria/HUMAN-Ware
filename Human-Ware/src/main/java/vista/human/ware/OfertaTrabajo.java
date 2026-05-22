@@ -46,11 +46,11 @@ public class OfertaTrabajo {
     }
 
     public void agregarHabilidadRequerida(Habilidad habilidad, int nivelMinimo) {
-        if (nivelMinimo >= 1 && nivelMinimo <= 5) {
+        if (nivelMinimo >= 1 && nivelMinimo <= 5 && !this.habilidadesRequeridas.contains(new OfertaHabilidad(habilidad, nivelMinimo))) {
             OfertaHabilidad of = new OfertaHabilidad(habilidad, nivelMinimo);
             this.habilidadesRequeridas.add(of);
         } else {
-            System.out.println("Error, El nivel minimo debe ser entre 1 y 5");
+            System.out.println("Error, El nivel minimo debe ser entre 1 y 5 o la habilidad ya existe");
         }
 
     }
@@ -88,6 +88,10 @@ public class OfertaTrabajo {
         for (Solicitud solicitud : solicitudesRecibidas) {
             System.out.println(solicitud);
         }
+    }
+
+    public List<Solicitud> getSolicitudesRecibidas() {
+        return solicitudesRecibidas;
     }
 
     public int getIdOfTrabajo() {

@@ -9,6 +9,7 @@ package vista.human.ware;
  * @author FRANCO
  */
 class Titulo {
+
     private int idTitulo;
     private String nombreTitulo;
     private String tipo;

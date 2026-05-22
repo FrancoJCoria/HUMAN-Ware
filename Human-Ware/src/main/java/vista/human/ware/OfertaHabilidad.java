@@ -9,6 +9,7 @@ package vista.human.ware;
  * @author FRANCO
  */
 class OfertaHabilidad {
+
     //Atributos
     private int idOfertaHabilidad;
     private Habilidad habilidad;
@@ -22,9 +23,8 @@ class OfertaHabilidad {
 
     public OfertaHabilidad() {
     }
-    
-    
-   //Get  y Set
+
+    //Get  y Set
     public int getIdOfertaHabilidad() {
         return idOfertaHabilidad;
     }

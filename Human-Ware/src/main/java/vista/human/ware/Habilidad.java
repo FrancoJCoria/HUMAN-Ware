@@ -9,20 +9,22 @@ package vista.human.ware;
  * @author FRANCO
  */
 class Habilidad {
+
     //Atributos
     private int idHabilidad;
     private String nombre;
-    
+
     //Constructor
     public Habilidad(int idHabilidad, String nombre) {
         this.idHabilidad = idHabilidad;
         this.nombre = nombre;
     }
-     //Constructor Vacio
+    //Constructor Vacio
+
     public Habilidad() {
     }
-    
-     //Get y Set
+
+    //Get y Set
     public int getIdHabilidad() {
         return idHabilidad;
     }
@@ -38,10 +40,10 @@ class Habilidad {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     //Metodos
-    public void mostrarHabilidad(){
-        System.out.println("ID: "+ this.idHabilidad + "  " + this.nombre);
+    public void mostrarHabilidad() {
+        System.out.println("ID: " + this.idHabilidad + "  " + this.nombre);
     }
-    
+
 }

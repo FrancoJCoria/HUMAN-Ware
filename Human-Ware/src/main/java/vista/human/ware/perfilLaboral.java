@@ -34,16 +34,17 @@ class perfilLaboral {
     }
 
     public void agregarHabilidad(Habilidad habilidad, int nivel) {
-        if (nivel >= 1 && nivel <=5) {
-            
+        if (nivel >= 1 && nivel <= 5 && !this.misHabilidades.contains(new PerfilHabilidad(habilidad, nivel))) {
+            this.misHabilidades.add(new PerfilHabilidad(habilidad, nivel));
+        } else {
+            System.out.println("Error, El nivel minimo debe ser entre 1 y 5 o la habilidad ya existe");
         }
     }
-    
-    public void mostrarSolicitudes(){
-        for(Solicitud solicitud : misSolicitudes){
+
+    public void mostrarSolicitudes() {
+        for (Solicitud solicitud : misSolicitudes) {
             System.out.println(solicitud);
         }
     }
-    
-    
+
 }

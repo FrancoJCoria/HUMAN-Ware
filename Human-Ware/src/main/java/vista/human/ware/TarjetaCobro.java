@@ -11,6 +11,7 @@ import java.time.LocalDate;
  * @author Noxie-PC
  */
 public class TarjetaCobro {
+
     //Atributos
     private int nroDeTarjeta;
     private String titular;
@@ -26,14 +27,11 @@ public class TarjetaCobro {
         this.banco = banco;
         this.codSeg = codSeg;
     }
-   
+
     //Constructor Vacio
     public TarjetaCobro() {
     }
-    
-    
-    
-    
+
     public String getTitular() {
         return titular;
     }
@@ -66,5 +64,4 @@ public class TarjetaCobro {
         this.codSeg = codSeg;
     }
 
-    
 }

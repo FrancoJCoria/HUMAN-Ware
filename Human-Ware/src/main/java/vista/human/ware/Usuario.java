@@ -11,6 +11,7 @@ import java.time.LocalDate;
  * @author Fede-
  */
 public class Usuario {
+
     private long idUsuario;
     private String contraseña;
     public String nombreUsuario;
@@ -37,13 +38,12 @@ public class Usuario {
         this.fechaNac = fechaNac;
         this.miPerfilLaboral = null;
     }
-    
-    
-    public void crearPerfilLaboral(perfilLaboral miPerfilLaboral){
-        if(this.miPerfilLaboral == null){
+
+    public void crearPerfilLaboral(perfilLaboral miPerfilLaboral) {
+        if (this.miPerfilLaboral == null) {
             this.miPerfilLaboral = miPerfilLaboral;
             System.out.println("Se añadio el perfilLaboral al Usuario!");
-        }else{
+        } else {
             System.out.println("Ya existe un perfilLaboral con este Usuario");
         }
     }
@@ -128,6 +128,5 @@ public class Usuario {
     public String toString() {
         return "Usuario{" + "idUsuario=" + idUsuario + ", nombreUsuario=" + nombreUsuario + ", nombre=" + nombre + ", cuil=" + cuil + '}';
     }
-  
-  
+
 }
