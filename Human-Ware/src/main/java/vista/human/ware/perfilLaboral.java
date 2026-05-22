@@ -63,10 +63,77 @@ class perfilLaboral {
 
     public void cancelarSolicitud(Solicitud solicitud) {
         if (this.misSolicitudes.contains(solicitud)) {
-            this.misSolicitudes.remove(solicitud);
+            solicitud.setEstado("Inactiva");
+            System.out.println("La solicitud fue cancelada");
         } else {
             System.out.println("La solicitud que desea eliminar no existe!");
         }
     }
+
+    public int getIdPostulante() {
+        return idPostulante;
+    }
+
+    public void setIdPostulante(int idPostulante) {
+        this.idPostulante = idPostulante;
+    }
+
+    public double getReMinima() {
+        return reMinima;
+    }
+
+    public void setReMinima(double reMinima) {
+        this.reMinima = reMinima;
+    }
+
+    public String getTipoJornada() {
+        return tipoJornada;
+    }
+
+    public void setTipoJornada(String tipoJornada) {
+        this.tipoJornada = tipoJornada;
+    }
+
+    public boolean isDispoViaje() {
+        return dispoViaje;
+    }
+
+    public void setDispoViaje(boolean dispoViaje) {
+        this.dispoViaje = dispoViaje;
+    }
+
+    public String getVehiculo() {
+        return vehiculo;
+    }
+
+    public void setVehiculo(String vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
+    public Titulo getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(Titulo titulo) {
+        this.titulo = titulo;
+    }
+
+    public List<PerfilHabilidad> getMisHabilidades() {
+        return misHabilidades;
+    }
+
+    public void setMisHabilidades(List<PerfilHabilidad> misHabilidades) {
+        this.misHabilidades = misHabilidades;
+    }
+
+    public List<Solicitud> getMisSolicitudes() {
+        return misSolicitudes;
+    }
+
+    public void setMisSolicitudes(List<Solicitud> misSolicitudes) {
+        this.misSolicitudes = misSolicitudes;
+    }
+    
+    
 
 }
